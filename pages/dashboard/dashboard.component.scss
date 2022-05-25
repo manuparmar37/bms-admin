@@ -1,0 +1,66 @@
+.card {
+    display: flow-root;
+    height: 90px;
+    border-radius: 10px;
+    box-shadow: 5px 10px #fafafa;
+}
+
+.value {
+    font-size: 30px;
+    color: #002b5c;
+    margin: 30px 0 0 10px;
+}
+
+.bottom-text {
+    color: #979797;
+    font-size: 12px;
+    margin: 5px 0 0 10px;
+}
+
+.right {
+    margin-top: 20px;
+    font-size: 50px;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: inline-block;
+    float: right;
+    color: #eee;
+}
+
+.left {
+    width: fit-content;
+    display: inline-block;
+}
+
+.other-cards {
+    display: flex;
+    margin-top: 50px;
+    .vertical-card {
+        width: 30%;
+        height: calc(100vh - 300px);
+        margin-right: 20px;
+        
+    }
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #002b5c;
+        padding: 15px 20px;
+    }
+}
+
+.list {
+    overflow: scroll;
+    height: calc(100vh - 370px);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+.list-item {
+    height: 40px;
+    margin-left: 20px;
+}

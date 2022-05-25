@@ -1,0 +1,99 @@
+.table-header-text {
+    color: #333;
+    text-transform: capitalize;
+    text-align: left;
+    letter-spacing: 0;
+    padding: 10px;
+    background-color: #f2f2f2;
+
+    th {
+        padding: 10px;
+        color: #333;
+        border-bottom: 1px solid #ddd;
+        text-transform: capitalize;
+        background-color: #fafafa;
+        width: 18%;
+        border: 1px solid #eee;
+    }
+}
+
+tbody {
+    font-size: 12px;
+
+    td {
+        text-align: left;
+        vertical-align: middle;
+        position: relative;
+        padding: 10px;
+        color: #404040;
+        border: 1px solid #eee;
+
+        a {
+            text-align: center;
+            color: #285fdb;
+            cursor: pointer;
+            user-select: none;
+        }
+    }
+
+    .view-details {
+        width: 100%;
+        background-color: #f5f7fa;
+
+        .detail-heading {
+            margin-left: 35px !important;
+            font-size: 14px;
+            font-family: inherit;
+            text-align: left;
+        }
+
+        .content-box {
+            width: 87%;
+            position: relative;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: #fff;
+            margin: 15px;
+
+            .content {
+                display: inline-block;
+                width: 22%;
+                padding: 0 15px;
+                text-align: left;
+                vertical-align: top;
+
+                .content-title {
+                    font-size: 13px;
+                    font-family: inherit;
+                    font-weight: 600;
+                    letter-spacing: 0;
+                    color: #514949;
+                }
+
+                .content-value {
+                    font: inherit;
+                    font-size: 12px;
+                    letter-spacing: 0;
+                    color: #666;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+
+.filter-bar {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    height: 55px;
+    padding-top: 10px;
+    background: #fafafa;
+
+    .filter {
+        display: inline-block;
+        width: 33%;
+        position: relative;
+        top: -9px;
+    }
+}

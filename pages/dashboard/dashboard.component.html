@@ -1,0 +1,90 @@
+<div class="movies-header">Dashboard</div>
+<div class="row" style="padding-left: 5%; margin-top: 20px;">
+    <div class="col-md-2 card">
+        <div class="left">
+            <div class="value">
+                {{count.movies}}
+            </div>
+            <div class="bottom-text">
+                Movies
+            </div>
+        </div>
+        <div class="right">
+            <i class="fa fa-thin fa-clapperboard"></i>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2 card">
+        <div class="left">
+            <div class="value">
+                {{count.genres}}
+            </div>
+            <div class="bottom-text">
+                Genres
+            </div>
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2 card">
+        <div class="left">
+            <div class="value">
+                {{count.languages}}
+            </div>
+            <div class="bottom-text">
+                Languages
+            </div>
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-language"></i>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2 card">
+        <div class="left">
+            <div class="value">
+                {{count.locations}}
+            </div>
+            <div class="bottom-text">
+                Locations
+            </div>
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-map-location-dot"></i>
+        </div>
+    </div>
+</div>
+<div class="other-cards">
+    <div class="card vertical-card">
+        <div class="title">
+            Recent Genres
+        </div>
+        <div class="list">
+            <div class="list-item" *ngFor="let genre of genres; index as i">
+                {{genre.name}}
+            </div>
+        </div>
+    </div>
+    <div class="card vertical-card">
+        <div class="title">
+            Recent Languages
+        </div>
+        <div class="list">
+            <div class="list-item" *ngFor="let language of languages; index as i">
+                {{language.name}}
+            </div>
+        </div>
+    </div>
+    <div class="card vertical-card">
+        <div class="title">
+            Recent Locations
+        </div>
+        <div class="list">
+            <div class="list-item" *ngFor="let location of locations; index as i">
+                {{location.name}}
+            </div>
+        </div>
+    </div>
+</div>

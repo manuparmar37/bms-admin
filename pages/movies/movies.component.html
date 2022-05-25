@@ -1,0 +1,132 @@
+<div class="movies-header">All Movies</div>
+<div class="filter-bar">
+    <div class="filter">
+        <mat-form-field appearance="fill">
+            <mat-label>Select Location</mat-label>
+            <mat-select multiple>
+                <mat-option (onSelectionChange)="selectionChangeLocation($event, 'locations')" *ngFor="let location of filters.locations"
+                    [value]="location.id">
+                    {{location.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="filter">
+        <mat-form-field appearance="fill">
+            <mat-label>Select Language</mat-label>
+            <mat-select multiple>
+                <mat-option (onSelectionChange)="selectionChangeLocation($event, 'languages')" *ngFor="let language of filters.languages" [value]="language.id">
+                    {{language.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="filter">
+        <mat-form-field appearance="fill">
+            <mat-label>Select Genre</mat-label>
+            <mat-select multiple>
+                <mat-option (onSelectionChange)="selectionChangeLocation($event, 'genres')" *ngFor="let genre of filters.genres" [value]="genre.id">
+                    {{genre.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<table id="ordertable" class="table table-bordered table-hover billingChargeDetail">
+    <thead class="table-header-text">
+        <tr>
+            <th>
+                <div>Name</div>
+            </th>
+
+            <th>
+                <div>Cast</div>
+            </th>
+
+            <th>
+                <div>Language</div>
+            </th>
+
+            <th>
+                <div>Genre</div>
+            </th>
+
+            <th>
+                <div>Number of theatres</div>
+            </th>
+
+            <th>
+                <div>Actions</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let movie of movies">
+            <tr>
+                <td>
+                    {{movie.name}}
+                </td>
+                <td>
+                    {{getNameArray(movie.cast)}}
+                </td>
+                <td>
+                    {{movie.language}}
+                </td>
+                <td>
+                    {{getNameArray(movie.genre)}}
+                </td>
+                <td>
+                    {{movie.noOfLocations}}
+                </td>
+                <td>
+                    <a *ngIf="filteredLocationIds.length > 0" (click)="toggleShowDetail(movie)">
+                        {{ showDetailItem && showDetailItemId == movie.id ? 'Hide' : 'View' }} Details
+                    </a>
+                </td>
+            </tr>
+            <tr class="view-details" *ngIf="showDetailItem && showDetailItemId == movie.id">
+                <td colspan="6" style="text-align: left;">
+                    <h5 class="detail-heading">
+                        <b>
+                            Available shows in selected locations:
+                        </b>
+                    </h5>
+                    <div class="content-box" *ngFor="let theatre of selectedMovie.theatres">
+                        <div class="content">
+                            <span class="content-title">
+                                Theatre name
+                            </span>
+                            <div class="content-value">
+                                {{ theatre.name }}
+                            </div>
+                        </div>
+                        <div class="content">
+                            <span class="content-title">
+                                Timings
+                            </span>
+                            <div class="content-value">
+                                {{ theatre.timings }}
+                            </div>
+                        </div>
+                        <div class="content">
+                            <span class="content-title">
+                                Location
+                            </span>
+                            <div class="content-value">
+                                {{ theatre.location.name }}
+                            </div>
+                        </div>
+                        <div class="content">
+                            <span class="content-title">
+                                Price
+                            </span>
+                            <div class="content-value">
+                                {{ theatre.price }}
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
